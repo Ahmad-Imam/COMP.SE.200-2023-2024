@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/.internal/getTag.js</title>
+    <title>Code coverage report for src/.internal/stringToArray.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/.internal</a> getTag.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/.internal</a> stringToArray.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.7% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>11/17</span>
+                <span class='fraction'>13/18</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">64.7% </span>
+                <span class="strong">72.22% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/17</span>
+                <span class='fraction'>13/18</span>
             </div>
         
             
@@ -80,7 +80,10 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -94,26 +97,26 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const toString = Object.prototype.toString
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import asciiToArray from './asciiToArray.js'
+import hasUnicode from './hasUnicode.js'
+import unicodeToArray from './unicodeToArray.js'
 &nbsp;
 /**
- * Gets the `toStringTag` of `value`.
+ * Converts `string` to an array.
  *
  * @private
- * @param {*} value The value to query.
- * @returns {string} Returns the `toStringTag`.
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the converted array.
  */
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function getTag(value) {</span></span>
-<span class="cstat-no" title="statement not covered" >  if (value == null) {</span>
-<span class="cstat-no" title="statement not covered" >    return value === undefined ? '[object Undefined]' : '[object Null]'</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >  return toString.call(value)</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function stringToArray(string) {</span></span>
+<span class="cstat-no" title="statement not covered" >  return hasUnicode(string)</span>
+<span class="cstat-no" title="statement not covered" >    ? unicodeToArray(string)</span>
+<span class="cstat-no" title="statement not covered" >    : asciiToArray(string)</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-export default getTag
+export default stringToArray
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
